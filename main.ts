@@ -45,7 +45,7 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
     } else if (tipselected == 2) {
         game.showLongText("Tip: Don't unpause the game!", DialogLayout.Center)
         game.over(false)
-    } else if (tipselected == 2) {
+    } else if (tipselected == 3) {
         game.showLongText("Tip: Be on the lookout for food! They could spawn anywhere...", DialogLayout.Center)
     }
 })
@@ -74,7 +74,7 @@ let S_Food: Sprite = null
 let tipselected = 0
 let S_Player: Sprite = null
 tiles.setTilemap(tiles.createTilemap(
-            hex`100010000204040404040404040404040404040807030303030303030303030303030306070303030303030303030303030303060703030303030303030303030303030607030303030303030303030303030306070303030303030303030303030303060703030303030303030303030303030607030303030303030303030303030306070303030303030303030303030303060703030303030303030303030303030607030303030303030303030303030306070303030303030303030303030303060703030303030303030303030303030607030303030303030303030303030306070303030303030303030303030303060a050505050505050505050505050509`,
+            hex`1000100003030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303`,
             img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -93,25 +93,14 @@ tiles.setTilemap(tiles.createTilemap(
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile2,sprites.castle.tilePath1,sprites.castle.tilePath5,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tilePath6,sprites.castle.tilePath4,sprites.castle.tilePath3,sprites.castle.tilePath9,sprites.castle.tilePath7],
+            [myTiles.tile0,myTiles.tile2,sprites.castle.tilePath1,sprites.castle.tilePath5,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.castle.tilePath6,sprites.castle.tilePath4,sprites.castle.tilePath3,sprites.castle.tilePath9,sprites.castle.tilePath7,sprites.castle.tileGrass3,sprites.castle.tileGrass2],
             TileScale.Sixteen
         ))
 S_Player = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player)
 controller.moveSprite(S_Player)
 let multiplier = 1
-scene.cameraFollowSprite(S_Player)
 game.onUpdate(function () {
     info.changeScoreBy(multiplier)
-})
-forever(function () {
-    music.playMelody("E B C5 A B G A F ", 200)
-    music.playMelody("E B C5 A B G A F ", 200)
-    music.playMelody("E B C5 A B G A F ", 200)
-    music.playMelody("E B C5 A B G A F ", 200)
-    music.playMelody("C B C5 A B G A F ", 200)
-    music.playMelody("C B C5 A B G A F ", 200)
-    music.playMelody("E B C5 A B G A F ", 200)
-    music.playMelody("E B C5 A B G A F ", 200)
 })
 forever(function () {
     pause(5000)
@@ -120,4 +109,14 @@ forever(function () {
         S_Food = sprites.create(sprites.food.smallCherries, SpriteKind.Food)
         S_Food.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
     }
+})
+forever(function () {
+    music.playMelody("E B C5 A B G A F ", 200)
+    music.playMelody("E B C5 A B G A F ", 200)
+    music.playMelody("E B C5 A B G A F ", 200)
+    music.playMelody("E B C5 A B G A F ", 200)
+    music.playMelody("C B C5 A B G A F ", 200)
+    music.playMelody("C B C5 A B G A F ", 200)
+    music.playMelody("E B C5 A B G A F ", 200)
+    music.playMelody("E B C5 A B G A F ", 200)
 })
