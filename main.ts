@@ -89,7 +89,7 @@ tiles.setTilemap(tiles.createTilemap(
             TileScale.Sixteen
         ))
 S_Player = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player)
-controller.moveSprite(S_Player, 25, 25)
+controller.moveSprite(S_Player)
 let multiplier = 1
 game.onUpdate(function () {
     info.changeScoreBy(multiplier)
