@@ -49,6 +49,10 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
         game.showLongText("Tip: Be on the lookout for food! They could spawn anywhere...", DialogLayout.Center)
     }
 })
+sprites.onOverlap(SpriteKind.Food, SpriteKind.Player, function (sprite, otherSprite) {
+    multiplier += 5
+    S_Food.destroy()
+})
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     S_Player.setImage(sprites.castle.heroWalkSideLeft1)
     multiplier += 1
