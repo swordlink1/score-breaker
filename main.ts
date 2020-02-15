@@ -66,7 +66,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 let tipselected = 0
 let S_Player: Sprite = null
 tiles.setTilemap(tiles.createTilemap(
-            hex`100010000e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e`,
+            hex`1000100002020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202`,
             img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -91,9 +91,17 @@ tiles.setTilemap(tiles.createTilemap(
 S_Player = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player)
 controller.moveSprite(S_Player)
 let multiplier = 1
+scene.cameraFollowSprite(S_Player)
 game.onUpdate(function () {
     info.changeScoreBy(multiplier)
 })
 forever(function () {
-    music.playMelody("C5 B A - F - G - ", 200)
+    music.playMelody("E B C5 A B G A F ", 200)
+    music.playMelody("E B C5 A B G A F ", 200)
+    music.playMelody("E B C5 A B G A F ", 200)
+    music.playMelody("E B C5 A B G A F ", 200)
+    music.playMelody("C B C5 A B G A F ", 200)
+    music.playMelody("C B C5 A B G A F ", 200)
+    music.playMelody("E B C5 A B G A F ", 200)
+    music.playMelody("E B C5 A B G A F ", 200)
 })
